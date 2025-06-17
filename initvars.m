@@ -16,7 +16,7 @@ start = 0;
 totalTime = 1000; % total steps 
 
 % initial line width for graphing
-lW = 0.25;
+lU = 0.25;
 
 % Values of Constants
 pbar = 7;
@@ -28,8 +28,8 @@ A = -1; % CHANGE THIS LATER BC THIS IS NOT ACTUALLY A CONSTANT!
 %to the right states
 uL = 3;
 pL = 2;
-uR = 15; 
-pR = 4;
+uR = 4; 
+pR = 5;
 
 % Determines case for graph titles
 % Cases are determined by which of pL or pR is bigger, as well as the value
