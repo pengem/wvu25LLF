@@ -20,7 +20,8 @@ lW = 0.25;
 
 % Values of Constants
 pbar = 1;
-aexp = 2;
+aexp = 0.5;
+A = 1; % CHANGE THIS LATER BC THIS IS NOT ACTUALLY A CONSTANT!
 
 % Initial Conditions given here
 %uL corresponds to the left state of a characterstic, while uR corresponds
