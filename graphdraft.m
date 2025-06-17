@@ -13,8 +13,9 @@ plotX = linspace(0,10,100);
 u1 = uL .* ones(size(plotX));
 u2 = (((pL^aexp) - (plotX.^aexp))./((plotX.^aexp) - (pbar^aexp))) .* (uL + A) + uL;
 
-% plot vw curves and all points
+% plot up curves and all points
 hold on;
 plot(plotX,u1,'-k');
 plot(plotX,u2,'-r');
 plot(randomVR,randomWR,'.r');
+ylim([-10,10])
