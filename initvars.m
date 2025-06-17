@@ -19,7 +19,7 @@ totalTime = 1000; % total steps
 lW = 0.25;
 
 % Values of Constants
-pbar = 1;
+pbar = 7;
 aexp = 0.5;
 A = 1; % CHANGE THIS LATER BC THIS IS NOT ACTUALLY A CONSTANT!
 
