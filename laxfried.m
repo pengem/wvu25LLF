@@ -19,7 +19,7 @@ end
 % Lax-Friedrich loop
 for i = start:totalTime
     
-    w = (q ./ p); % recalculate w from q
+    u = (q ./ p); % recalculate w from q
 
     % check if data should be renormed, happens every renorm iterations (usually 100) 
     norm=norm+1;  if norm==renorm, ourrenorm; norm=0; end
@@ -37,7 +37,7 @@ for i = start:totalTime
     
     % LF-scheme 
     pr=[p(1) p];  pr(lx+1)=[];  
-	ur=[w(1) w];  ur(lx+1)=[];
+	ur=[u(1) u];  ur(lx+1)=[];
     qr=[q(1) q];  qr(lx+1)=[];
     
 
@@ -48,7 +48,7 @@ for i = start:totalTime
 
     p=(p+pr)/2 + dt * (f1r-f1)/2;
 	q=(q+qr)/2 + dt * (f2r-f2)/2; 
-    w = (q ./ p);
+    u = (q ./ p);
 
     % put right state back in 
     p=[p p(lx)]; 
