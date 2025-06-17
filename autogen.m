@@ -35,7 +35,7 @@ for j = 1:length(randomVR)
     initvars; % initialize variables
 
     % create filename base
-    nameFile = ['Case' num2str(caseNum) 'Iteration' num2str(j)];
+%    nameFile = ['Case' num2str(caseNum) 'Iteration' num2str(j)];
     pR = randomVR(j); uR = randomWR(j); % assign right states each iteration
 
     % setup taken from initvars since it reruns every time 
@@ -65,21 +65,22 @@ for j = 1:length(randomVR)
     end
     
     % save files as png
-    saveas(fig,[nameFile 'Complete.png']);
+%    saveas(fig,[nameFile 'Complete.png']);
     % saveas(fig2,[nameFile 'Single.png']);
 
-    clc; close all; % clear console, close figures after each iteration
+    %clc; close all; % clear console, close figures after each iteration
 
 end
 
 % create figure and get curves for shocks
 fig3 = figure(3);
-plotX = linspace(0.9,6,100);
+plotX = linspace(0,10,100);
 u1 = uL .* ones(size(plotX));
 u2 = (((pL^aexp) - (plotX.^aexp))./((plotX.^aexp) - (pbar^aexp))) .* (uL + A) + uL;
 
-% plot vw curves and all points
+% plot up curves and all points
 hold on;
 plot(plotX,u1,'-k');
-plot(plotX,u2,'-k');
+plot(plotX,u2,'-r');
 plot(randomVR,randomWR,'.r');
+ylim([-10,10])
