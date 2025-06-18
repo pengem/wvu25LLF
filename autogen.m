@@ -30,13 +30,13 @@ randomUR = [-1];
 %-5 + 10.*rand(1,numOuter); randomWR = floor(randomWR .* 10) ./ 10; % generates numOuter numbers between -5 and 5
 
 % generate numOuter figures
-for j = 1:length(randomVR)
+for j = 1:length(randomPR)
     
     initvars; % initialize variables
 
     % create filename base
 %    nameFile = ['Case' num2str(caseNum) 'Iteration' num2str(j)];
-    pR = randomVR(j); uR = randomWR(j); % assign right states each iteration
+    pR = randomPR(j); uR = randomUR(j); % assign right states each iteration
 
     % setup taken from initvars since it reruns every time 
     %
@@ -82,5 +82,5 @@ u2 = (((pL^aexp) - (plotX.^aexp))./((plotX.^aexp) - (pbar^aexp))) .* (uL + A) + 
 hold on;
 plot(plotX,u1,'-k');
 plot(plotX,u2,'-r');
-plot(randomVR,randomWR,'.r');
+plot(randomPR,randomUR,'.r');
 ylim([-10,10])
