@@ -22,10 +22,10 @@ numOuter = 3; % numOuter controls how many points/ figures are generated
 %
 % for N random numbers between [a, b], use r = a + (b-a).*rand(1,N) from
 % MATLAB documentation 
-randomPR = [5];
+randomPR = [2.5];
 %4.5 4.5 4.5 7.5 3.01 2.2 1.7 3.4 4
 %5.*rand(1,numOuter); randomVR = floor(randomVR .* 10) ./ 10; % generates numOuter numbers between 0 and 5
-randomUR = [4];
+randomUR = [2.5];
 %2.5 1.7 1.9 1.9 1.9 0.2 -1.2 1.05 1.39
 %-5 + 10.*rand(1,numOuter); randomWR = floor(randomWR .* 10) ./ 10; % generates numOuter numbers between -5 and 5
 
@@ -76,11 +76,17 @@ end
 fig3 = figure(3);
 plotX = linspace(0,10,100);
 u1 = uL .* ones(size(plotX));
-u2 = (((pL^aexp) - (plotX.^aexp))./((plotX.^aexp) - (pbar^aexp))) .* (uL + A) + uL;
+u2 = (((pL^aexp) - (plotX.^aexp))./((plotX.^aexp) - (pbar^aexp))) .* (uL + integral(a_s, 0, 1)) + uL;
 
-% plot up curves and all points
+% plot up curves and all points (in red)
 hold on;
-plot(plotX,u1,'-k');
-plot(plotX,u2,'-r');
+plot(plotX,u1,'-r');
+plot(plotX,u2,'-b');
 plot(randomPR,randomUR,'.r');
+plot(plotX,-integral(a_s, 0, 1).*ones(length(plotX)), ':k')
+
+%y-axis and x-axis are solid black lines
+ xline(0);
+ yline(0);
+
 ylim([-10,10])
