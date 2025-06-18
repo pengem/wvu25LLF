@@ -22,10 +22,10 @@ numOuter = 3; % numOuter controls how many points/ figures are generated
 %
 % for N random numbers between [a, b], use r = a + (b-a).*rand(1,N) from
 % MATLAB documentation 
-randomPR = [1];
+randomPR = [5];
 %4.5 4.5 4.5 7.5 3.01 2.2 1.7 3.4 4
 %5.*rand(1,numOuter); randomVR = floor(randomVR .* 10) ./ 10; % generates numOuter numbers between 0 and 5
-randomUR = [-1];
+randomUR = [4];
 %2.5 1.7 1.9 1.9 1.9 0.2 -1.2 1.05 1.39
 %-5 + 10.*rand(1,numOuter); randomWR = floor(randomWR .* 10) ./ 10; % generates numOuter numbers between -5 and 5
 
