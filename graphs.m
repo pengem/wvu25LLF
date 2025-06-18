@@ -1,7 +1,7 @@
-% graphs v and w
-%   lW: variable to control line width, increases after each iteration
-%   fig: figure object with all v,w plots
-%   fig2: figure object with latest v,w plot
+% graphs p and u
+%   lu: variable to control line width, increases after each iteration
+%   fig: figure object with all p,u plots
+%   fig2: figure object with latest p,u plot
 
 fig = figure(1); %, clf
 hold on

@@ -13,7 +13,7 @@
 if start==0
     lx = lx0; t = 0; iters = 0; start = 1; norm = 1; % set initial conditions
     x = 1:1:lx; centerx = (lx+1)/2; x = 2*dx*(x-centerx);
-    lambda = systemeigen(u,p,pbar,aexp,A); dt = CFL / lambda; % calculate eigenvalue and use to get initial dt
+    lambda = systemeigen(u,p,pbar,aexp, a_s, t); dt = CFL / lambda; % calculate eigenvalue and use to get initial dt
 end
 
 % Lax-Friedrich loop
@@ -24,7 +24,7 @@ for i = start:totalTime
     % check if data should be renormed, happens every renorm iterations (usually 100) 
     norm=norm+1;  if norm==renorm, ourrenorm; norm=0; end
 
-    lambda = systemeigen(u,p,pbar,aexp,A); % get new eigenvalue
+    lambda = systemeigen(u,p,pbar,aexp, a_s, t); % get new eigenvalue
     dt = CFL / lambda; % update dt time step based on calculated eigenvalue
 
     % update time and iteration var
@@ -33,7 +33,7 @@ for i = start:totalTime
 
 
     q = p.*u; % change of variable to have only [u q]^T in flux 
-    [f1,f2] = flux(u,p,pbar,aexp,A); % calculate flux
+    [f1,f2] = flux(u,p,pbar,aexp, a_s, t); % calculate flux
     
     % LF-scheme 
     pr=[p(1) p];  pr(lx+1)=[];  
