@@ -67,13 +67,13 @@ elseif aexp == -1
         else
             caseNum = 9; % case 9
         end
-    else
+    else % uL > 0
         if pL < pbar
             caseNum = 10; % case 10
         elseif pL == pbar
             caseNum = 11; % case 11
         else
-            caseNum = c12; % case 12
+            caseNum = 12; % case 12
         end
     end
 elseif aexp > -1 && aexp < 0
@@ -85,7 +85,7 @@ elseif aexp > -1 && aexp < 0
         else
             caseNum = 15; % case 15
         end
-    else
+    else % uL > 0
         if pL < pbar
             caseNum = 16; % case 16
         elseif pL == pbar
@@ -94,7 +94,7 @@ elseif aexp > -1 && aexp < 0
             caseNum = 18; % case 18
         end
     end
-elseif aexp > 0
+elseif % a > 0
     if uL < 0
         if pL < pbar
             caseNum = 19; % case 19
