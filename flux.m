@@ -4,7 +4,7 @@
 
 function[f1, f2] = flux(u,p,pbar,aexp, a_s, t)
 
-f1 = p.*u - p.*u.*((p/pbar).^aexp) + p.*integral(a_s, 0, t) - p.*integral(a_s, 0, t).*((p/pbar).^aexp);
+f1 = p.*u - p.*u.*((p/pbar).^aexp) + p.*(a_s.*t) - p.*(a_s.*t).*((p/pbar).^aexp);
 
-f2 = p.*(u.^2) - p.*(u.^2).*((p/pbar).^aexp) + p.*u.*integral(a_s, 0, t) - p.*u.*integral(a_s, 0, t).*((p/pbar).^aexp);
+f2 = p.*(u.^2) - p.*(u.^2).*((p/pbar).^aexp) + p.*u.*(a_s.*t) - p.*u.*(a_s.*t).*((p/pbar).^aexp);
 end

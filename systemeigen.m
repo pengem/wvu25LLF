@@ -4,8 +4,8 @@ function [lambdamax] = systemeigen(u,p,pbar,aexp, a_s, t)
 % Matlab will automatically discard imaginary parts
 % RETURNS: max of absolute value of lambda1 and lambda2
 
-lambda1 = -(u + integral(a_s, 0, t)) .* ((1 + aexp) .* (p ./ pbar).^aexp - 1);
-lambda2 = -(u + integral(a_s, 0, t)) .* ((p ./ pbar).^aexp - 1);
+lambda1 = -(u + (a_s.*t)) .* ((1 + aexp) .* (p ./ pbar).^aexp - 1);
+lambda2 = -(u + (a_s.*t)) .* ((p ./ pbar).^aexp - 1);
 
 % basically lambda1 = [lambda_1^L, lambda_1^R]
 % and       lambda2 = [lambda_2^L, lambda_2^R]

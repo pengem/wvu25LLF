@@ -22,7 +22,7 @@ numOuter = 3; % numOuter controls how many points/ figures are generated
 %
 % for N random numbers between [a, b], use r = a + (b-a).*rand(1,N) from
 % MATLAB documentation 
-randomPR = [2];
+randomPR = [2.5];
 %4.5 4.5 4.5 7.5 3.01 2.2 1.7 3.4 4
 %5.*rand(1,numOuter); randomVR = floor(randomVR .* 10) ./ 10; % generates numOuter numbers between 0 and 5
 randomUR = [2];
@@ -72,18 +72,18 @@ for j = 1:length(randomPR)
 
 end
 
-% create figure and get curves for shocks
+% create figure and get curves for shocks. t=1 
 fig3 = figure(3);
 plotX = linspace(0,10,100);
 u1 = uL .* ones(size(plotX));
-u2 = (((pL^aexp) - (plotX.^aexp))./((plotX.^aexp) - (pbar^aexp))) .* (uL + integral(a_s, 0, 1)) + uL;
+u2 = (((pL^aexp) - (plotX.^aexp))./((plotX.^aexp) - (pbar^aexp))) .* (uL + (a_s.*1)) + uL;
 
 % plot up curves and all points (in red)
 hold on;
 plot(plotX,u1,'-r');
 plot(plotX,u2,'-b');
 plot(randomPR,randomUR,'.r');
-plot(plotX,-integral(a_s, 0, 1).*ones(length(plotX)), ':k')
+plot(plotX,-(a_s.*1).*ones(length(plotX)), ':k')
 
 %y-axis and x-axis are solid black lines
  xline(0);

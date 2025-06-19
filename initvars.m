@@ -21,9 +21,7 @@ lU = 0.25;
 % Values of Constants
 pbar = 3;
 aexp = 0.5;
-
-% a(s) thing THIS CAN BE CHANGED !!!
-a_s = @(s) -s;
+a_s = -1;
 
 % Initial Conditions given here
 %uL corresponds to the left state of a characterstic, while uR corresponds
