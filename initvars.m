@@ -10,7 +10,7 @@ figure(1), clf
 % Grid Variables
 dx = 1; 
 lx0 = 4; %Inital vector size
-CFL = 0.8; %Numerical stability condition, controls dt/dx
+CFL = 0.5; %Numerical stability condition, controls dt/dx
 renorm = 100; 
 start = 0; 
 totalTime = 1000; % total steps 

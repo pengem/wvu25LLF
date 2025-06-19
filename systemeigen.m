@@ -7,8 +7,6 @@ function [lambdamax] = systemeigen(u,p,pbar,aexp, a_s, t)
 lambda1 = -(u + integral(a_s, 0, t)) .* ((1 + aexp) .* (p ./ pbar).^aexp - 1);
 lambda2 = -(u + integral(a_s, 0, t)) .* ((p ./ pbar).^aexp - 1);
 
-
-
 % basically lambda1 = [lambda_1^L, lambda_1^R]
 % and       lambda2 = [lambda_2^L, lambda_2^R]
 
