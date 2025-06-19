@@ -94,7 +94,7 @@ elseif aexp > -1 && aexp < 0
             caseNum = 18; % case 18
         end
     end
-elseif % a > 0
+elseif aexp > 0
     if uL < 0
         if pL < pbar
             caseNum = 19; % case 19
