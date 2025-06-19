@@ -35,11 +35,12 @@ for j = 1:length(randomPR)
     initvars; % initialize variables
 
     % create filename base
-%    nameFile = ['Case' num2str(caseNum) 'Iteration' num2str(j)];
+    nameFile = ['Case' num2str(caseNum) 'Iteration' num2str(j)];
+
+
     pR = randomPR(j); uR = randomUR(j); % assign right states each iteration
 
     % setup taken from initvars since it reruns every time 
-    %
     qL = pL*uL;
     qR = pR*uR;
 
@@ -63,10 +64,14 @@ for j = 1:length(randomPR)
     for i = 1:numInner
         laxfried; % call laxfried
     end
-    
+
+
+
+
+
     % save files as png
-%    saveas(fig,[nameFile 'Complete.png']);
-    % saveas(fig2,[nameFile 'Single.png']);
+    saveas(fig,[nameFile 'Complete.png']);
+%    saveas(fig2,[nameFile 'Single.png']);
 
     %clc; close all; % clear console, close figures after each iteration
 
