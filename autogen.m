@@ -99,7 +99,11 @@ else
     plot(plotX,u2,'-b');
 end
 
-plot(randomPR,randomUR,'.r');
+%plot(randomPR,randomUR,'.r'); this is only if there are mulitple points in
+%randomPR and randomUR
+
+% plots the right state that we r looking at
+plot(pR,uR,'.r')
 
 % asymptote (?) A 
 plot(plotX,-(a_s.*1).*ones(length(plotX)), ':k')
