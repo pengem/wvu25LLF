@@ -109,7 +109,7 @@ plot(pR,uR,'.r')
 % asymptote (?) A 
 plot(plotX,-(a_s.*t_graph).*ones(length(plotX)), ':k')
 
-% asymptote B (it's purple lol)
+% asymptote B (it's purple lol) 
 B = -((pL/pbar)^aexp)*uL + (uL - a_s.*t_graph);
 plot(plotX,B.*ones(length(plotX)), ':k')
 

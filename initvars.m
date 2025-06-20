@@ -20,8 +20,8 @@ lU = 0.25;
 
 % Values of Constants
 pbar = 3;
-aexp = 0.5;
-a_s = -1;
+aexp = -0.5;
+a_s = 1;
 
 
 % this is for the graph:
@@ -31,10 +31,10 @@ t_graph = 1;
 % Initial Conditions given here
 %uL corresponds to the left state of a characterstic, while uR corresponds
 %to the right states
-uL = 3;
 pL = 4;
-uR = 3.01; 
-pR = 8;
+uL = 3;
+pR = 4;
+uR = -2; 
 
 % Determines case for graph titles
 % Cases are determined by which of pL or pR is bigger, as well as the value
