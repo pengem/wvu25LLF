@@ -80,15 +80,27 @@ end
 % create figure and get curves for shocks. t=1 
 fig3 = figure(3);
 plotX = linspace(0,10,100);
+
 u1 = uL .* ones(size(plotX));
 u2 = (((pL^aexp) - (plotX.^aexp))./((plotX.^aexp) - (pbar^aexp))) .* (uL + (a_s.*1)) + uL;
 
 % plot up curves and all points (in red)
 hold on;
-plot(plotX,u1,'-r');
+
+% u1 becomes a vertical line when pbar = pL
+if pbar == pL
+    xline(pbar, '-r');
+else
+    plot(plotX,u1,'-r');
+end
 plot(plotX,u2,'-b');
 plot(randomPR,randomUR,'.r');
+
+% asymptote (?) A 
 plot(plotX,-(a_s.*1).*ones(length(plotX)), ':k')
+
+% pbar asymptote 
+xline(pbar, ':k')
 
 %y-axis and x-axis are solid black lines
  xline(0);
