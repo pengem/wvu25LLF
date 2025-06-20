@@ -28,6 +28,10 @@ plot(pR,uR,'.r');
 % asymptote (?) A 
 plot(plotX,-(a_s.*1).*ones(length(plotX)), ':k')
 
+% asymptote B
+B = -((pL/pbar)^aexp)*uL + (uL - a_s.*1);
+plot(plotX,B.*ones(length(plotX)), ':m')
+
 % pbar asymptote 
 xline(pbar, ':k')
 

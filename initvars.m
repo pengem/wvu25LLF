@@ -24,16 +24,17 @@ aexp = 0.5;
 a_s = -1;
 
 
-
+% this is for the graph:
+t_graph = 1;
 
 
 % Initial Conditions given here
 %uL corresponds to the left state of a characterstic, while uR corresponds
 %to the right states
 uL = 3;
-pL = 2;
-uR = 4; 
-pR = 5;
+pL = 4;
+uR = 3.01; 
+pR = 8;
 
 % Determines case for graph titles
 % Cases are determined by which of pL or pR is bigger, as well as the value
@@ -48,13 +49,13 @@ if aexp < -1
             caseNum = 2; % case 2
         else
             caseNum = 3; % case 3
-        end
+        end % pL > pbar
     else % uL > 0
         if pL < pbar
             caseNum = 4; % case 4
         elseif pL == pbar
             caseNum = 5; % case 5
-        else
+        else % pL > pbar
             caseNum = 6; % case 6
         end
     end
@@ -64,7 +65,7 @@ elseif aexp == -1
             caseNum = 7; % case 7
         elseif pL == pbar
             caseNum = 8; % case 8
-        else
+        else % pL > pbar
             caseNum = 9; % case 9
         end
     else % uL > 0
@@ -72,7 +73,7 @@ elseif aexp == -1
             caseNum = 10; % case 10
         elseif pL == pbar
             caseNum = 11; % case 11
-        else
+        else % pL > pbar
             caseNum = 12; % case 12
         end
     end
@@ -82,7 +83,7 @@ elseif aexp > -1 && aexp < 0
             caseNum = 13; % case 13
         elseif pL == pbar
             caseNum = 14; % case 14
-        else
+        else % pL > pbar
             caseNum = 15; % case 15
         end
     else % uL > 0
@@ -90,7 +91,7 @@ elseif aexp > -1 && aexp < 0
             caseNum = 16; % case 16
         elseif pL == pbar
             caseNum = 17; % case 17
-        else
+        else % pL > pbar
             caseNum = 18; % case 18
         end
     end
@@ -100,15 +101,15 @@ elseif aexp > 0
             caseNum = 19; % case 19
         elseif pL == pbar
             caseNum = 20; % case 20
-        else
+        else % pL > pbar
             caseNum = 21; % case 21
         end
-    else
+    else % uL > 0
         if pL < pbar
             caseNum = 22; % case 22
         elseif pL == pbar
             caseNum = 23; % case 23
-        else
+        else % pL > pbar
             caseNum = 24; % case 24
         end
     end

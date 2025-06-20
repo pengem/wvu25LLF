@@ -88,7 +88,7 @@ plotX = linspace(0,10,100);
 u1 = uL .* ones(size(plotX));
 u2 = (((pL^aexp) - (plotX.^aexp))./((plotX.^aexp) - (pbar^aexp))) .* (uL + (a_s.*1)) + uL;
 
-% plot up curves and all points (in red)
+% plot up curves and points
 hold on;
 
 % u2 becomes a vertical line when pbar = pL
@@ -99,14 +99,19 @@ else
     plot(plotX,u2,'-b');
 end
 
-%plot(randomPR,randomUR,'.r'); this is only if there are mulitple points in
-%randomPR and randomUR
+% this is only if there are mulitple points in randomPR and randomUR
+%plot(randomPR,randomUR,'.r'); 
 
-% plots the right state that we r looking at
+
+% plots the right state point that we r looking at
 plot(pR,uR,'.r')
 
 % asymptote (?) A 
-plot(plotX,-(a_s.*1).*ones(length(plotX)), ':k')
+plot(plotX,-(a_s.*t_graph).*ones(length(plotX)), ':k')
+
+% asymptote B (it's purple lol)
+B = -((pL/pbar)^aexp)*uL + (uL - a_s.*t_graph);
+plot(plotX,B.*ones(length(plotX)), ':k')
 
 % pbar asymptote 
 xline(pbar, ':k')
