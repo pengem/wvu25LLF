@@ -22,10 +22,14 @@ numOuter = 3; % numOuter controls how many points/ figures are generated
 %
 % for N random numbers between [a, b], use r = a + (b-a).*rand(1,N) from
 % MATLAB documentation 
-randomPR = [5];
+
+randomPR = [1];
+
 %4.5 4.5 4.5 7.5 3.01 2.2 1.7 3.4 4
 %5.*rand(1,numOuter); randomVR = floor(randomVR .* 10) ./ 10; % generates numOuter numbers between 0 and 5
-randomUR = [4];
+   
+    % randomUR = [2];
+
 %2.5 1.7 1.9 1.9 1.9 0.2 -1.2 1.05 1.39
 %-5 + 10.*rand(1,numOuter); randomWR = floor(randomWR .* 10) ./ 10; % generates numOuter numbers between -5 and 5
 
@@ -38,7 +42,7 @@ for j = 1:length(randomPR)
     nameFile = ['Case' num2str(caseNum) 'Iteration' num2str(j)];
 
 
-    pR = randomPR(j); uR = randomUR(j); % assign right states each iteration
+%    pR = randomPR(j); uR = randomUR(j); % assign right states each iteration
 
     % setup taken from initvars since it reruns every time 
     qL = pL*uL;
@@ -87,13 +91,14 @@ u2 = (((pL^aexp) - (plotX.^aexp))./((plotX.^aexp) - (pbar^aexp))) .* (uL + (a_s.
 % plot up curves and all points (in red)
 hold on;
 
-% u1 becomes a vertical line when pbar = pL
+% u2 becomes a vertical line when pbar = pL
 plot(plotX,u1,'-r');
 if pbar == pL
     xline(pbar, '-b');
 else
     plot(plotX,u2,'-b');
 end
+
 plot(randomPR,randomUR,'.r');
 
 % asymptote (?) A 
