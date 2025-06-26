@@ -23,7 +23,7 @@ pbar = 3;
 aexp = 0.5;
 
 % a(s) thing THIS CAN BE CHANGED !!!
-a_s = @(s) -s;
+a_s = @(s) 7*cosine(s);
 
 % Initial Conditions given here
 %uL corresponds to the left state of a characterstic, while uR corresponds
