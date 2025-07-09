@@ -111,7 +111,7 @@ plot(plotX,-(a_s.*t_graph).*ones(length(plotX)), ':k')
 
 % asymptote B (it's purple lol) 
 B = -((pL/pbar)^aexp)*uL + (uL - a_s.*t_graph);
-plot(plotX,B.*ones(length(plotX)), ':k')
+plot(plotX,B.*ones(length(plotX)), ':m')
 
 % pbar asymptote 
 xline(pbar, ':k')
@@ -120,4 +120,8 @@ xline(pbar, ':k')
  xline(0);
  yline(0);
 
+ % this plots the path it takes
+ plot(p,u,"magenta")
+
 ylim([-10,10])
+
