@@ -82,11 +82,11 @@ for j = 1:length(randomPR)
 end
 
 % create figure and get curves for shocks. t=1 
-fig3 = figure(3);
+figure;
 plotX = linspace(0,10,100);
 
 u1 = uL .* ones(size(plotX));
-u2 = (((pL^aexp) - (plotX.^aexp))./((plotX.^aexp) - (pbar^aexp))) .* (uL + (a_s.*1)) + uL;
+u2 = (((pL^aexp) - (plotX.^aexp))./((plotX.^aexp) - (pbar^aexp))) .* (uL + (a_s.*t_graph)) + uL;
 
 % plot up curves and points
 hold on;

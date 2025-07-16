@@ -61,4 +61,7 @@ end
 
 % actually update figure
 
+
+twentygraphs;
+
 graphs; % calls graphs after
