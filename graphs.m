@@ -7,7 +7,7 @@ fig = figure(1); %, clf
 hold on
 subplot(2,2,1), hold on
 plot(X,p,'k','LineWidth',lU);
-title(['                                     Case ',num2str(caseNum),': \rho bar =',num2str(pbar),', a =',num2str(aexp),'  States {\itp, u}',':  ', ...
+title(['                                     Case ',num2str(caseNum),': \rho = ',num2str(pbar),', a = ',num2str(aexp),'  States {\itp, u}',':  ', ...
  num2str(iters),' Steps, ', 't = ',num2str(t)],'FontSize',16)
 	xlabel('\itx/t', 'FontSize',16), ylabel('\itp','FontSize',16)
 subplot(2,2,3), hold on
@@ -45,4 +45,3 @@ xlabel(['\itx/t; \rm Data \itV_L \rm= (',num2str(vL),',', num2str(wL), ...
 %}
 
 lU = lU + 0.05; % increase line width after each iteration
-
