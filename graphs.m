@@ -7,8 +7,8 @@ fig = figure(1); %, clf
 hold on
 subplot(2,2,1), hold on
 plot(X,p,'k','LineWidth',lU);
-title(['                                     Case ',num2str(caseNum),': \rho = ',num2str(pbar),', a = ',num2str(aexp),'  States {\itp, u}',':  ', ...
- num2str(iters),' Steps, ', 't = ',num2str(t)],'FontSize',16)
+title(['                                     Case ',num2str(caseNum),': \rho bar = ',num2str(pbar),', a = ',num2str(aexp), ...
+ ', Steps = ', num2str(iters), ', t = ',num2str(t)],'FontSize',16)
 	xlabel('\itx/t', 'FontSize',16), ylabel('\itp','FontSize',16)
 subplot(2,2,3), hold on
 plot(X,u,'k','LineWidth',lU), ylabel('\itu','FontSize',16)
