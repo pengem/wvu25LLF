@@ -39,7 +39,7 @@ for j = 1:length(randomPR)
     initvars; % initialize variables
 
     % create filename base
-    nameFile = ['Case' num2str(caseNum) 'Iteration' num2str(j)];
+    nameFile = ['Case' num2str(caseNum) 'L(' num2str(pL) ',' num2str(uL) ')R(' num2str(pR) ',' num2str(uR) ')'];
 
 
 %    pR = randomPR(j); uR = randomUR(j); % assign right states each iteration
@@ -69,24 +69,17 @@ for j = 1:length(randomPR)
         laxfried; % call laxfried
     end
 
-
-
-
-
     % save files as png
-    saveas(fig,[nameFile 'Complete.png']);
-%    saveas(fig2,[nameFile 'Single.png']);
-
-    %clc; close all; % clear console, close figures after each iteration
+    saveas(fig,[nameFile '.png']);
 
 end
 
 % create figure and get curves for shocks. t=1 
-fig3 = figure(3);
+figure;
 plotX = linspace(0,10,100);
 
 u1 = uL .* ones(size(plotX));
-u2 = (((pL^aexp) - (plotX.^aexp))./((plotX.^aexp) - (pbar^aexp))) .* (uL + (a_s.*1)) + uL;
+u2 = (((pL^aexp) - (plotX.^aexp))./((plotX.^aexp) - (pbar^aexp))) .* (uL + (a_s.*t_graph)) + uL;
 
 % plot up curves and points
 hold on;

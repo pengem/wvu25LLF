@@ -19,9 +19,9 @@ totalTime = 1000; % total steps
 lU = 0.25;
 
 % Values of Constants
-pbar = 3;
-aexp = 0.5;
-a_s = 1;
+pbar = 5;
+aexp = -1.5;
+a_s = 0;
 
 
 % this is for the graph:
@@ -32,9 +32,9 @@ t_graph = 1;
 %uL corresponds to the left state of a characterstic, while uR corresponds
 %to the right states
 pL = 3;
-uL = 4;
-pR = 3;
-uR = 10; 
+uL = 3;
+pR = 4;
+uR = -5;  
 
 % Determines case for graph titles
 % Cases are determined by which of pL or pR is bigger, as well as the value
