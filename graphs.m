@@ -7,8 +7,14 @@ fig = figure(1); %, clf
 hold on
 subplot(2,2,1), hold on
 plot(X,p,'k','LineWidth',lU);
+
+if a_s ==0
 title(['                                     Case ',num2str(caseNum),': \rho bar = ',num2str(pbar),', a = ',num2str(aexp), ...
  ', Steps = ', num2str(iters), ', t = ', num2str(round(t, 2))],'FontSize',16)
+else
+title(['                                       Case ',num2str(caseNum),': a(t) = ', num2str(a_s) ', \rho bar = ',num2str(pbar),', a = ',num2str(aexp), ...
+ ', Steps = ', num2str(iters), ', t = ', num2str(round(t, 2))],'FontSize',16)
+end
 	xlabel('\itx/t', 'FontSize',16), ylabel('\itp','FontSize',16)
 
     
