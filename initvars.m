@@ -20,7 +20,7 @@ lU = 0.25;
 
 % Values of Constants
 pbar = 5;
-aexp = -1.5;
+aexp = 0.5;
 a_s = 0;
 
 
@@ -33,8 +33,8 @@ t_graph = 1;
 %to the right states
 pL = 3;
 uL = 3;
-pR = 4;
-uR = -5;  
+pR = 7;
+uR = 5;  
 
 % Determines case for graph titles
 % Cases are determined by which of pL or pR is bigger, as well as the value

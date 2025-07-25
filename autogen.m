@@ -39,7 +39,7 @@ for j = 1:length(randomPR)
     initvars; % initialize variables
 
     % create filename base
-    nameFile = ['Case' num2str(caseNum) 'L(' num2str(pL) ',' num2str(uL) ')R(' num2str(pR) ',' num2str(uR) ')'];
+    nameFile = ['Case' num2str(caseNum) 'a(t)' num2str(a_s) 'L(' num2str(pL) ',' num2str(uL) ')R(' num2str(pR) ',' num2str(uR) ')'];
 
 
 %    pR = randomPR(j); uR = randomUR(j); % assign right states each iteration
@@ -92,9 +92,6 @@ else
     plot(plotX,u2,'-b');
 end
 
-% this is only if there are mulitple points in randomPR and randomUR
-%plot(randomPR,randomUR,'.r'); 
-
 
 % plots the right state point that we r looking at
 plot(pR,uR,'.r')
@@ -117,4 +114,3 @@ xline(pbar, ':k')
  plot(p,u,"magenta")
 
 ylim([-10,10])
-

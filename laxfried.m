@@ -59,6 +59,14 @@ for i = start:totalTime
     x=x-dx;x=[x x(lx)+2*dx]; lx=lx+1; X=x/t;
 end
 
-% actually update figure
+% uncomment this if you want it to print out iterations in a seperate
+% figure each time LOL
+% twentygraphs;
 
-graphs; % calls graphs after
+% uncomment this if u want it to graph iterations on the same plot
+
+if a_s == 0
+    finalitgraph;
+else
+    graphs;
+end
