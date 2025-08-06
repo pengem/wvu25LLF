@@ -1,3 +1,4 @@
+tic
 % Autogen Script
 % NOTE: You only need to run this script. This calls everything else.
 % Iterates through laxfried desired amount of times
@@ -35,7 +36,7 @@ for j = 1:length(randomPR)
     initvars; % initialize variables
 
     % create filename base
-%    nameFile = ['Case' num2str(caseNum) 'Iteration' num2str(j)];
+    nameFile = ['oscillatoryCase' num2str(caseNum) '_' num2str(numInner) 'iterations'];
     pR = randomPR(j); uR = randomUR(j); % assign right states each iteration
 
     % setup taken from initvars since it reruns every time 
@@ -65,7 +66,7 @@ for j = 1:length(randomPR)
     end
     
     % save files as png
-%    saveas(fig,[nameFile 'Complete.png']);
+    saveas(fig,[nameFile '.png']);
     % saveas(fig2,[nameFile 'Single.png']);
 
     %clc; close all; % clear console, close figures after each iteration
@@ -90,3 +91,4 @@ plot(plotX,-integral(a_s, 0, 1).*ones(length(plotX)), ':k')
  yline(0);
 
 ylim([-10,10])
+toc

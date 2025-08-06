@@ -62,3 +62,4 @@ end
 % actually update figure
 
 graphs; % calls graphs after
+drawnow

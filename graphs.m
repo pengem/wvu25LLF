@@ -7,8 +7,7 @@ fig = figure(1); %, clf
 hold on
 subplot(2,2,1), hold on
 plot(X,p,'k','LineWidth',lU);
-% title(['                                                   Case ',num2str(caseNum),': \gamma =',num2str(g),'  States {\itv, w}',':  ', ...
-% num2str(iters),' Steps, ', 't = ',num2str(t)],'FontSize',16)
+sgtitle(['Case ',num2str(caseNum), ': oscillatory source term of $a(t) = 7 e^s \cos(s)$'],'FontSize',16, 'Interpreter', 'latex')
 	xlabel('\itx/t', 'FontSize',16), ylabel('\itp','FontSize',16)
 subplot(2,2,3), hold on
 plot(X,u,'k','LineWidth',lU), ylabel('\itu','FontSize',16)
