@@ -77,14 +77,14 @@ end
 fig3 = figure(3);
 plotX = linspace(0,10,100);
 u1 = uL .* ones(size(plotX));
-u2 = (((pL^aexp) - (plotX.^aexp))./((plotX.^aexp) - (pbar^aexp))) .* (uL + integral(a_s, 0, 1)) + uL;
+u2 = (((pL^aexp) - (plotX.^aexp))./((plotX.^aexp) - (pbar^aexp))) .* (uL + integral(a_s, 0, t)) + uL;
 
 % plot up curves and all points (in red)
 hold on;
 plot(plotX,u1,'-r');
 plot(plotX,u2,'-b');
 plot(randomPR,randomUR,'.r');
-plot(plotX,-integral(a_s, 0, 1).*ones(length(plotX)), ':k')
+plot(plotX,-integral(a_s, 0, t).*ones(length(plotX)), ':k')
 
 %y-axis and x-axis are solid black lines
  xline(0);
