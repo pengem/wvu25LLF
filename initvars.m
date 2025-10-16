@@ -20,18 +20,20 @@ lU = 0.25;
 
 % Values of Constants
 pbar = 3;
-aexp = 0.5;
+aexp = -1.5;
 
 % a(s) thing THIS CAN BE CHANGED !!!
-a_s = @(s) 7*cosine(s);
+amp = 10;
+freq = 10;
+a_s = @(s) amp*cosine(freq*s);
 
 % Initial Conditions given here
 %uL corresponds to the left state of a characterstic, while uR corresponds
 %to the right states
-uL = 3;
 pL = 2;
-uR = 4; 
-pR = 5;
+uL = -3;
+pR = 8;
+uR = -4; 
 
 % Determines case for graph titles
 % Cases are determined by which of pL or pR is bigger, as well as the value
