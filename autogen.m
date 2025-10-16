@@ -36,7 +36,7 @@ for j = 1:length(randomPR)
 
     % create filename base
 %    nameFile = ['Case' num2str(caseNum) 'Iteration' num2str(j)];
-    pR = randomPR(j); uR = randomUR(j); % assign right states each iteration
+   % pR = randomPR(j); uR = randomUR(j); % assign right states each iteration
 
     % setup taken from initvars since it reruns every time 
     %
@@ -76,14 +76,14 @@ end
 fig3 = figure(3);
 plotX = linspace(0,10,100);
 u1 = uL .* ones(size(plotX));
-u2 = (((pL^aexp) - (plotX.^aexp))./((plotX.^aexp) - (pbar^aexp))) .* (uL + integral(a_s, 0, 1)) + uL;
+u2 = (((pL^aexp) - (plotX.^aexp))./((plotX.^aexp) - (pbar^aexp))) .* (uL + amp/freq.*sin(freq*t)) + uL;
 
 % plot up curves and all points (in red)
 hold on;
 plot(plotX,u1,'-r');
 plot(plotX,u2,'-b');
-plot(randomPR,randomUR,'.r');
-plot(plotX,-integral(a_s, 0, 1).*ones(length(plotX)), ':k')
+plot(pR,uR,'.r');
+plot(plotX,-7*sin(t).*ones(length(plotX)), ':k')
 
 %y-axis and x-axis are solid black lines
  xline(0);
