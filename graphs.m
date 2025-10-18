@@ -45,4 +45,3 @@ xlabel(['\itx/t; \rm Data \itV_L \rm= (',num2str(vL),',', num2str(wL), ...
 %}
 
 lU = lU + 0.05; % increase line width after each iteration
-
