@@ -61,4 +61,5 @@ end
 
 % actually update figure
 
-graphs; % calls graphs after
+%graphs; % calls graphs after
+finalitgraph
